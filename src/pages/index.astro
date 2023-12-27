@@ -1,25 +1,32 @@
 ---
-import { getCollection } from 'astro:content'
-import { Heading} from '../components/Headings/heading.tsx'
-const posts = await getCollection('posts') as { slug: string, data: { title: string } }[]
+import { getCollection } from "astro:content";
+import { Heading } from "../components/Headings/heading.tsx";
+import Layout from "../components/Layout/Layout.astro";
+const posts = (await getCollection("posts")) as {
+  slug: string;
+  data: { title: string };
+}[];
+
+const seo = {
+  title: "Blog",
+  keywords: "tech",
+  description: "My blog",
+  sitename: "Jonathan Hamilton's blog",
+  url: "https://example.com/blog",
+  imageurl: "https://example.com/og-image.jpg",
+  imageAlt: "banner for the blog",
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Heading level={1}>my blog</Heading>
-		<ul>
-			{posts.map(post => (
-			  <li>
-				<a href={`/posts/${post.slug}`}>{post.data.title}</a>
-			  </li>
-			))}
-		  </ul>
-	</body>
-</html>
+<Layout seo={seo}>
+  <Heading level={1}>my blog</Heading>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
