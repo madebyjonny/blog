@@ -52,7 +52,7 @@ export const Heading: FC<ComponentProps<HeadingType> & HeadingProps> = (
   props,
 ) => {
   const { type = "h1", children, variant, ...rest } = props;
-  const Htype = type as HeadingType; // Ensure Htype is of type HeadingType
+  const Htype = type as HeadingType;
 
   return React.createElement(
     Htype,
