@@ -43,7 +43,7 @@ const types = stylex.create({
 type HeadingProps = {
   type: keyof typeof types;
   children: React.ReactNode;
-  variant: keyof typeof variants;
+  variant?: keyof typeof variants;
 };
 
 export const Heading: FC<ComponentProps<"h1"> & HeadingProps> = (props) => {
@@ -52,11 +52,7 @@ export const Heading: FC<ComponentProps<"h1"> & HeadingProps> = (props) => {
 
   return (
     <Htype
-      {...stylex.props(
-        styles.base,
-        type && types[Htype],
-        variant && variants[variant],
-      )}
+      {...stylex.props(styles.base, types[type], variant && variants[variant])}
     >
       {children}
     </Htype>
