@@ -1,4 +1,4 @@
-import React, { Component, type FC } from "react";
+import React, { type ComponentProps, type FC } from "react";
 import stylex from "@stylexjs/stylex";
 
 type HeadingProps = {
@@ -15,7 +15,7 @@ const styles = stylex.create({
   },
 });
 
-export const Heading: FC<HeadingProps> = (props) => {
+export const Heading: FC<ComponentProps<"h1"> & HeadingProps> = (props) => {
   const { level, children } = props;
   const HLevel = `h${level}` as keyof JSX.IntrinsicElements;
   return <HLevel {...stylex.props([styles.highlighted])}>{children}</HLevel>;
