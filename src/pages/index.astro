@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import { Heading } from "../components/Headings/heading.tsx";
+import { Heading } from "../components/Heading/Heading.tsx";
 import Layout from "../components/Layout/Layout.astro";
+
 const posts = (await getCollection("posts")) as {
   slug: string;
   data: { title: string };
