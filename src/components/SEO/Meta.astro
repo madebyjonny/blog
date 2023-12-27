@@ -1,0 +1,29 @@
+---
+interface Props {
+  data: {
+    keywords: string;
+    description: string;
+    title: string;
+    sitename: string;
+    url: string;
+    imageurl: string;
+    imageAlt: string;
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<meta name="description" content={data.description} />
+<meta name="keywords" content={data.keywords} />
+<meta property="og:title" content={data.title} />
+<meta property="og:site_name" content={data.sitename} />
+<meta property="og:url" content={data.url} />
+<meta property="og:description" content={data.description} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content={data.imageurl} />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={data.title} />
+<meta name="twitter:description" content={data.description} />
+<meta name="twitter:image" content={data.imageurl} />
+<meta name="twitter:image:alt" content={data.imageAlt} />

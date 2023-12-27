@@ -15,11 +15,17 @@
     "@astrojs/react": "^3.0.8",
     "@keystatic/astro": "^2.0.3",
     "@keystatic/core": "^0.2.9",
+    "@stylexjs/stylex": "^0.3.0",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.0.7",
+    "astro-stylex": "^0.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2"
   }
 }

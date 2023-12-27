@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
-
+import { Heading} from '../components/Headings/heading.tsx'
 const posts = await getCollection('posts') as { slug: string, data: { title: string } }[]
 ---
 
@@ -13,7 +13,7 @@ const posts = await getCollection('posts') as { slug: string, data: { title: str
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>my blog</h1>
+		<Heading level={1}>my blog</Heading>
 		<ul>
 			{posts.map(post => (
 			  <li>
@@ -23,4 +23,3 @@ const posts = await getCollection('posts') as { slug: string, data: { title: str
 		  </ul>
 	</body>
 </html>
-
