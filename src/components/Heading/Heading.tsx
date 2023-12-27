@@ -40,21 +40,26 @@ const types = stylex.create({
   },
 });
 
+type HeadingType = keyof typeof types;
+
 type HeadingProps = {
-  type: keyof typeof types;
+  type: HeadingType;
   children: React.ReactNode;
   variant?: keyof typeof variants;
 };
 
-export const Heading: FC<ComponentProps<"h1"> & HeadingProps> = (props) => {
-  const { type = "h1", children, variant } = props;
-  const Htype = type;
+export const Heading: FC<ComponentProps<HeadingType> & HeadingProps> = (
+  props,
+) => {
+  const { type = "h1", children, variant, ...rest } = props;
+  const Htype = type as HeadingType; // Ensure Htype is of type HeadingType
 
-  return (
-    <Htype
-      {...stylex.props(styles.base, types[type], variant && variants[variant])}
-    >
-      {children}
-    </Htype>
+  return React.createElement(
+    Htype,
+    {
+      ...rest,
+      ...stylex.props(styles.base, types[type], variant && variants[variant]),
+    },
+    children,
   );
 };
