@@ -1,20 +1,48 @@
 ---
-import { getCollection } from 'astro:content';
-import { getEntry } from 'astro:content'
+import { getCollection } from "astro:content";
+import { getEntry } from "astro:content";
+import { Heading } from "../../components/Heading/Heading.tsx";
+import { Container } from "../../components/Container/Container.tsx";
+import { Header } from "../../components/Container/Header.tsx";
+import { Grid } from "../../components/Grid/Grid.tsx";
+import Layout from "../../components/Layout/Layout.astro";
+import { Pill } from "../../components/Pill/Pill";
 const { slug } = Astro.params;
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('posts');
-  return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  const blogEntries = await getCollection("posts");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
-const post = await getEntry('posts', slug) 
-const { Content } = await post.render() 
+const post = await getEntry("posts", slug);
+const { Content } = await post.render();
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.extend(relativeTime);
+const seo = {
+  title: post.data.title,
+  description: post.data.description,
+  keywords: "",
+  sitename: "",
+  url: `sitename.com/posts/${post.slug}`,
+  imageurl: "",
+  imageAlt: "",
+};
 ---
 
-<main>
-  <h1>{post.data.title}</h1>
-  <Content />
-</main>
+<Layout seo={seo}>
+  <Grid>
+    <Container>
+      <Header>
+        <Pill>{post.data.category}</Pill>
+        <Heading as="h1">{post.data.title}</Heading>
+        <span>Posted {dayjs(post.data.created_on).fromNow()}</span>
+      </Header>
+    </Container>
+    <Content />
+  </Grid>
+</Layout>

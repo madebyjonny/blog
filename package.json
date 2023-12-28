@@ -20,6 +20,7 @@
     "@types/react-dom": "^18.2.18",
     "astro": "^4.0.7",
     "astro-stylex": "^0.1.2",
+    "dayjs": "^1.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.3.3"

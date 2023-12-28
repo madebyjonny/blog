@@ -1,6 +1,5 @@
 .card {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   padding: 24px;
   background-color: #f1f1f1;
@@ -11,6 +10,7 @@
 
   h2 {
     line-height: 100%;
+
     margin: 0;
     font-size: 2rem;
   }
@@ -19,31 +19,41 @@
     display: flex;
     gap: 1rem;
     flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
   }
 }
 
-.pill {
-  max-width: max-content;
-  letter-spacing: 0.6px;
-  text-transform: capitalize;
+.meta {
+  width: 100%;
   display: flex;
-  height: 32px;
-  border-radius: 16px;
   align-items: center;
-  justify-content: center;
-  padding: 0 16px;
-  background-color: pink;
-  color: #000;
+  justify-content: space-between;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    padding: 0 2rem;
+    grid-template-columns: repeat(9, 1fr);
+    > * {
+      grid-column: span 9;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   .card {
     background: #101012;
     color: #f1f1f1;
-  }
-
-  .pill {
-    background-color: #262628;
-    color: pink;
   }
 }

@@ -1,0 +1,20 @@
+.pill {
+  max-width: max-content;
+  letter-spacing: 0.6px;
+  text-transform: capitalize;
+  display: flex;
+  height: 32px;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background-color: pink;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pill {
+    background-color: #262628;
+    color: pink;
+  }
+}

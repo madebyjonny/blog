@@ -22,14 +22,14 @@
   .grid {
     padding: 0 2rem;
     li {
-      grid-column: span 3;
+      grid-column: span 4;
     }
   }
 }
 
 @media (min-width: 1313px) {
   .grid {
-    padding: 0 4rem;
+    padding: 0 10%;
     grid-template-columns: repeat(12, 1fr);
     > * {
       grid-column: span 12;

@@ -7,7 +7,12 @@ import Layout from "../components/Layout/Layout.astro";
 
 const posts = (await getCollection("posts")) as {
   slug: string;
-  data: { title: string };
+  data: {
+    title: string;
+    category: string;
+    summary: string;
+    created_on: string;
+  };
 }[];
 
 const seo = {
@@ -26,17 +31,18 @@ const seo = {
     <Heading as="h1">my blog</Heading>
     <ul>
       {
-        posts.map((post) => (
-          <li>
-            <BlogCard
-              href={`/posts/${post.slug}`}
-              category="category"
-              title={post.data.title}
-              summary="This is a summary of the post"
-              date="28/12/2024"
-            />
-          </li>
-        ))
+        posts &&
+          posts.map((post) => (
+            <li>
+              <BlogCard
+                href={`/posts/${post.slug}`}
+                category={post.data.category}
+                title={post.data.title}
+                summary={post.data.summary}
+                date={post.data.created_on}
+              />
+            </li>
+          ))
       }
     </ul>
   </Grid>

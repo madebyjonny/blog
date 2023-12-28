@@ -14,9 +14,37 @@ body {
   color: #000;
 }
 
+article {
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+p {
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  grid-column: 1 / 7 !important;
+}
+
+a {
+  font-weight: bold;
+  color: #000;
+}
+
+@media (min-width: 600px) {
+  p {
+    grid-column: 2 / 6 !important;
+  }
+}
+
+@media (min-width: 1313px) {
+  p {
+    grid-column: 4 / 10 !important;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #000002;
-    color: #f1f1f1;
+    color: #d6d6d6;
   }
 }

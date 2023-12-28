@@ -1,0 +1,23 @@
+.container {
+  grid-column: 1 / 7 !important;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-column: 2 / 6 !important;
+  }
+}
+
+@media (min-width: 1313px) {
+  .container {
+    grid-column: 4 / 10 !important;
+  }
+}
