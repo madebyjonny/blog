@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [
     react(),
     markdoc(),
-    ...(!process.env.PRODUCTION ? [] : [keystatic()]),
+    ...(process.env.PRODUCTION ? [] : [keystatic()]),
   ],
   output: "hybrid",
   adapter: vercel(),
