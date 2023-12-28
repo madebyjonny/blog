@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+  padding: 0 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+
+  > * {
+    grid-column: span 6;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  li {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 600px) {
+  .grid {
+    padding: 0 2rem;
+    li {
+      grid-column: span 3;
+    }
+  }
+}
+
+@media (min-width: 1313px) {
+  .grid {
+    padding: 0 4rem;
+    grid-template-columns: repeat(12, 1fr);
+    > * {
+      grid-column: span 12;
+    }
+  }
+}

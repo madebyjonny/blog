@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import { Heading } from "../components/Heading/Heading.tsx";
+import { Grid } from "../components/Grid/Grid.tsx";
+import { BlogCard } from "../components/Card/Card.tsx";
 import Layout from "../components/Layout/Layout.astro";
 
 const posts = (await getCollection("posts")) as {
@@ -20,14 +22,22 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-  <Heading as="h1" variant="">my blog</Heading>
-  <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <Grid>
+    <Heading as="h1">my blog</Heading>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <BlogCard
+              href={`/posts/${post.slug}`}
+              category="category"
+              title={post.data.title}
+              summary="This is a summary of the post"
+              date="28/12/2024"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </Grid>
 </Layout>

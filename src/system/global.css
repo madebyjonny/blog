@@ -1,0 +1,22 @@
+body,
+html,
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000002;
+    color: #f1f1f1;
+  }
+}
