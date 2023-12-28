@@ -1,6 +1,4 @@
 ---
-import Meta from "../SEO/Meta.astro"
-
 interface Props {
   seo: {
     keywords: string;
@@ -10,22 +8,18 @@ interface Props {
     url: string;
     imageurl: string;
     imageAlt: string;
-  }
+  };
 }
 
 const { seo } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<Meta data={seo} />
-		<title>Jonathan Hamilton - {seo.title}</title>
-	</head>
-	<body>
-		<slot />
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Jonathan Hamilton - {seo.title}</title>
+  </head>
+  <body><slot /></body>
 </html>

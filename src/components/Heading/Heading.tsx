@@ -1,64 +1,29 @@
-import React, { type ComponentProps, type FC } from "react";
-import stylex from "@stylexjs/stylex";
+import React, { type ComponentProps, type FC, type ReactNode } from "react";
+import styles from "./heading.module.css";
 
-const styles = stylex.create({
-  base: {
-    color: "blue",
-    ":hover": {
-      opacity: "0.9",
-    },
-  },
-});
+type variants = "primary" | "secondary" | "danger" | "success" | "warning";
 
-const variants = stylex.create({
-  primary: {
-    color: "red",
-  },
-  secondary: {
-    color: "green",
-  },
-});
+type Htypes = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-const types = stylex.create({
-  h1: {
-    color: "red",
-  },
-  h2: {
-    color: "green",
-  },
-  h3: {
-    color: "blue",
-  },
-  h4: {
-    color: "yellow",
-  },
-  h5: {
-    color: "pink",
-  },
-  h6: {
-    color: "black",
-  },
-});
-
-type HeadingType = keyof typeof types;
+console.log(styles);
 
 type HeadingProps = {
-  type: HeadingType;
-  children: React.ReactNode;
-  variant?: keyof typeof variants;
+  as: Htypes;
+  children: ReactNode;
+  variant?: variants;
 };
 
-export const Heading: FC<ComponentProps<HeadingType> & HeadingProps> = (
-  props,
-) => {
-  const { type = "h1", children, variant, ...rest } = props;
-  const Htype = type as HeadingType;
+console.log(styles);
+
+export const Heading: FC<ComponentProps<Htypes> & HeadingProps> = (props) => {
+  const { as = "h1", children, variant, ...rest } = props;
+  const Htype = as as Htypes;
 
   return React.createElement(
     Htype,
     {
       ...rest,
-      ...stylex.props(styles.base, types[type], variant && variants[variant]),
+      className: styles.heading,
     },
     children,
   );

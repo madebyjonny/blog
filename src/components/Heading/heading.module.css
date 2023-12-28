@@ -1,0 +1,11 @@
+.heading {
+  color: red;
+}
+
+h1.heading {
+  font-size: 3rem;
+}
+
+h2.heading {
+  font-size: 1rem;
+}
