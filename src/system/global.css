@@ -47,4 +47,8 @@ a {
     background: #000002;
     color: #d6d6d6;
   }
+
+  a {
+    color: pink;
+  }
 }
