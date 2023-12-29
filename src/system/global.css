@@ -43,9 +43,14 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
+  .branding {
+    img {
+      filter: invert(1);
+    }
+  }
   body {
-    background: #000002;
-    color: #d6d6d6;
+    background: #090909;
+    color: #7b7d7d;
   }
 
   a {

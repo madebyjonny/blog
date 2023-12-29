@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import { Heading } from "../components/Heading/Heading.tsx";
 import { Grid } from "../components/Grid/Grid.tsx";
 import { BlogCard } from "../components/Card/Card.tsx";
+import { HeroText } from "../components/HeroText/HeroText.tsx";
 import Layout from "../components/Layout/Layout.astro";
 
 const posts = (await getCollection("posts")) as {
@@ -28,7 +28,11 @@ const seo = {
 
 <Layout seo={seo}>
   <Grid>
-    <Heading as="h1">my blog</Heading>
+    <HeroText
+      title="👋🏻 Welcome to my blog"
+      leadText="This is mostly a place for me to talk about the technology I am using and also to experiment with them."
+    />
+
     <ul>
       {
         posts &&

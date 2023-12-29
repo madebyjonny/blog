@@ -8,6 +8,7 @@ import { Grid } from "../../components/Grid/Grid.tsx";
 import { DateFromNow } from "../../components/Date/Date.tsx";
 import Layout from "../../components/Layout/Layout.astro";
 import { Pill } from "../../components/Pill/Pill";
+import { readTime } from "../../utils";
 const { slug } = Astro.params;
 
 export async function getStaticPaths() {
@@ -38,7 +39,10 @@ const seo = {
       <Header>
         <Pill>{post.data.category}</Pill>
         <Heading as="h1">{post.data.title}</Heading>
-        <span>Posted <DateFromNow date={post.data.created_on} /></span>
+        <div>
+          <span>Posted <DateFromNow date={post.data.created_on} /></span> -
+          <span>{readTime(post.body)} min read</span>
+        </div>
       </Header>
     </Container>
     <Content />

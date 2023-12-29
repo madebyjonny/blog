@@ -1,0 +1,10 @@
+.heroText {
+  max-width: 650px;
+  margin: 24px 0;
+  p {
+    text-wrap: balance;
+    font-size: 1.5rem;
+    color: #666;
+    margin: 0;
+  }
+}

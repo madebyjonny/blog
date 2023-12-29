@@ -1,6 +1,7 @@
 ---
 import "../../system/global.css";
 import Meta from "../SEO/Meta.astro";
+import { Branding } from "../Branding/Branding.tsx";
 
 interface Props {
   seo: {
@@ -25,5 +26,8 @@ const { seo } = Astro.props;
     <Meta data={seo} />
     <title>Jonathan Hamilton - {seo.title}</title>
   </head>
-  <body><slot /></body>
+  <body>
+    <Branding />
+    <slot />
+  </body>
 </html>

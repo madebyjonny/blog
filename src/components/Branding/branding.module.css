@@ -1,0 +1,16 @@
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-transform: uppercase;
+  padding: 24px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .branding {
+    color: #fff;
+    img {
+      filter: invert(1);
+    }
+  }
+}
