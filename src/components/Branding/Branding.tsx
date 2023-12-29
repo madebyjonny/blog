@@ -6,7 +6,18 @@ export const Branding: FC<ComponentProps<"div">> = () => {
   return (
     <Grid>
       <div className={styles.branding}>
-        <img width="70px" src="/logo.svg" alt="made by jonny logo" />
+        <img
+          width="70px"
+          src="/logo.svg"
+          alt="made by jonny logo"
+          className={styles.logoLight}
+        />
+        <img
+          width="70px"
+          src="/logo-white.svg"
+          alt="made by jonny logo"
+          className={styles.logoDark}
+        />
         <span>
           <strong>Madebyjonny</strong> - blog
         </span>

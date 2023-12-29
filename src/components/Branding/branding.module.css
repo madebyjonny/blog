@@ -6,11 +6,22 @@
   padding: 24px 0;
 }
 
+.logoLight {
+  display: block;
+}
+
+.logoDark {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
+  .logoLight {
+    display: none;
+  }
+  .logoDark {
+    display: block;
+  }
   .branding {
     color: #fff;
-    img {
-      filter: invert(1);
-    }
   }
 }
