@@ -5,6 +5,7 @@ import { Heading } from "../../components/Heading/Heading.tsx";
 import { Container } from "../../components/Container/Container.tsx";
 import { Header } from "../../components/Container/Header.tsx";
 import { Grid } from "../../components/Grid/Grid.tsx";
+import { DateFromNow } from "../../components/Date/Date.tsx";
 import Layout from "../../components/Layout/Layout.astro";
 import { Pill } from "../../components/Pill/Pill";
 const { slug } = Astro.params;
@@ -19,10 +20,7 @@ export async function getStaticPaths() {
 
 const post = await getEntry("posts", slug);
 const { Content } = await post.render();
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
 
-dayjs.extend(relativeTime);
 const seo = {
   title: post.data.title,
   description: post.data.summary,
@@ -40,7 +38,7 @@ const seo = {
       <Header>
         <Pill>{post.data.category}</Pill>
         <Heading as="h1">{post.data.title}</Heading>
-        <span>Posted {dayjs(post.data.created_on).fromNow()}</span>
+        <span>Posted <DateFromNow date={post.data.created_on} /></span>
       </Header>
     </Container>
     <Content />

@@ -3,7 +3,7 @@ import { ImageResponse } from "@vercel/og";
 import { Banner } from "./banner";
 import { getCollection } from "astro:content";
 
-export const GET: APIRoute = async ({ params, request, props }) => {
+export const GET: APIRoute = async ({ props }) => {
   const { title, summary } = props.post.data;
   return new ImageResponse(Banner(title, summary), {
     width: 1200,
