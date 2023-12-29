@@ -43,17 +43,6 @@
   color: #666;
 }
 
-@media (min-width: 600px) {
-  .grid {
-    padding: 0 2rem;
-    grid-template-columns: repeat(9, 1fr);
-  }
-
-  .grid > * {
-    grid-column: span 9;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   .card {
     background: #111112;

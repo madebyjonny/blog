@@ -16,15 +16,18 @@
 }
 
 .grid li {
-  grid-column: span 6;
+  grid-column: span 6 !important;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 763px) {
   .grid {
     padding: 0 2rem;
   }
+  .grid ul {
+    grid-column: span 12;
+  }
   .grid li {
-    grid-column: span 4;
+    grid-column: span 3 !important;
   }
 }
 
@@ -32,6 +35,9 @@
   .grid {
     padding: 0 10%;
     grid-template-columns: repeat(12, 1fr);
+  }
+  .grid li {
+    grid-column: span 4 !important;
   }
   .grid > * {
     grid-column: span 12;
