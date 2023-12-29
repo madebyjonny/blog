@@ -8,26 +8,27 @@
   text-decoration: none;
   color: #111;
   font-weight: lighter;
+  margin-bottom: 24px;
+}
 
-  h2 {
-    line-height: 100%;
+.card h2 {
+  line-height: 100%;
 
-    margin: 0;
-    font-size: 2rem;
-  }
+  margin: 0;
+  font-size: 2rem;
+}
 
-  header {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
-    margin-bottom: 16px;
-  }
+.card header {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
 
-  p {
-    color: #666;
-    font-size: 1rem;
-    margin: 0;
-  }
+.card p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
 }
 
 .meta {
@@ -46,9 +47,10 @@
   .grid {
     padding: 0 2rem;
     grid-template-columns: repeat(9, 1fr);
-    > * {
-      grid-column: span 9;
-    }
+  }
+
+  .grid > * {
+    grid-column: span 9;
   }
 }
 
