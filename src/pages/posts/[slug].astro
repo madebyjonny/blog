@@ -27,10 +27,10 @@ const seo = {
   title: post.data.title,
   description: post.data.description,
   keywords: "",
-  sitename: "",
-  url: `sitename.com/posts/${post.slug}`,
-  imageurl: "",
-  imageAlt: "",
+  sitename: "blog.madebyjonny.com",
+  url: `blog.madebyjonny.com/posts/${post.slug}`,
+  imageurl: `blog.madebyjonny.com/api/${post.slug}/og.png`,
+  imageAlt: post.data.title + " - " + post.data.summary,
 };
 ---
 

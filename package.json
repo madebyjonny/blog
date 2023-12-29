@@ -19,6 +19,7 @@
     "@stylexjs/stylex": "^0.3.0",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
+    "@vercel/og": "^0.6.1",
     "astro": "^4.0.7",
     "astro-stylex": "^0.1.2",
     "dayjs": "^1.11.10",
