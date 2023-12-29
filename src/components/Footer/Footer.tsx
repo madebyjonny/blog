@@ -8,7 +8,12 @@ export const Footer: FC<ComponentProps<"div">> = () => {
     <Grid>
       <footer className={styles.footer}>
         <Heading as="h3">Follow me here ✌🏻</Heading>
-        <a href="https://www.x.com/madebyjonny" target="_blank" aria-label="X">
+        <a
+          className={styles.iconLink}
+          href="https://www.x.com/madebyjonny"
+          target="_blank"
+          aria-label="X"
+        >
           𝕏
         </a>
       </footer>
