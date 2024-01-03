@@ -37,13 +37,13 @@ Once you have done this, move into the directory and you should be able to run
 
 If you go to your browser and go to the url localhost:3000, you will be greeted with a screen to enter details for your admin user. Once you have done this you should be able to login and see a screen with collections on your left and a card representation of this in the middle of your screen. Right now we should only have users.&nbsp;
 
-![](/src/content/posts/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2013.40.36.png)
+![](/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2013.40.36.png)
 
 ## Your first collection&nbsp;
 
 It’s time to dive into the code. So open your working directory in your editor. There are quite a few different files in this folder but we only want to focus on what is inside of the src directory. Inside of this directory we have a collections directory, a server.ts file as well as a payload.config.ts file. These are important but we don’t need to worry about them right now.
 
-![](/src/content/posts/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2014.30.46.png)
+![](/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2014.30.46.png)
 
 Collections in Payload are just objects, if you look at the Users.ts file will get an example of how the structure should look, but because they are using payload we can get inference thanks to the `CollectionConfig` type. So let's create our own, inside of the collections directory create a file called Pages.ts. We need to import the type of CollectionConfig from payload/types and then we can create a Page variable for our object and start to fill out the required fields (you can use ctrl+space in VS Code to see what can be used in the object). Alternatively you can visit Payload’s documentation for a full list of fields you can use. This is what mine looks like.
 
@@ -114,11 +114,11 @@ export default buildConfig({
 
 Now if you still have your application running, if not start it up again by running `npm run dev`. You should now see a pages collection.
 
-![](/src/content/posts/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2013.40.48.png)
+![](/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2013.40.48.png)
 
 Now let’s go into that and create some content, this can be anything for now, but once you have saved this, you will see at the top right an API tab and if you visit that tab you will see an example endpoint along with the preview of how the data looks.
 
-![](/src/content/posts/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2013.41.12.png)
+![](/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2013.41.12.png)
 
 By default you will need to be authenticated to visit this end point, so if you tried to call this from your web application it wouldn’t work. So let’s go back and allow that. Back in your Pages collections all you need to do is add this&nbsp;to our Pages collection.
 

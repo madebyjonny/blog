@@ -41,8 +41,8 @@ export default config({
           dividers: true,
           links: true,
           images: {
-            directory: "src/content/posts/_images",
-            publicPath: "/src/content/posts/_images/",
+            directory: "public/_images",
+            publicPath: "/_images/",
             schema: {
               title: fields.text({
                 label: "Caption",
