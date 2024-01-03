@@ -37,7 +37,7 @@ const seo = {
     <ul>
       {
         posts &&
-          posts.map((post) => (
+          posts.reverse().map((post) => (
             <li>
               <BlogCard
                 href={`/posts/${post.slug}`}
