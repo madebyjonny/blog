@@ -46,7 +46,7 @@ article img {
 article h1,
 article h2,
 article strong {
-  color: #fff;
+  color: #ccc;
 }
 
 a {
@@ -100,6 +100,12 @@ code {
     img {
       filter: invert(1);
     }
+  }
+
+  article h1,
+  article h2,
+  article strong {
+    color: #fff;
   }
 
   body {
