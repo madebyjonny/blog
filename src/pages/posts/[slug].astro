@@ -37,7 +37,7 @@ const seo = {
   <Grid>
     <Container>
       <Header>
-        <Pill>{post.data.category}</Pill>
+        <Pill>{post.data.category.replace("-", " ")}</Pill>
         <Heading as="h1">{post.data.title}</Heading>
         <div>
           <span>Posted <DateFromNow date={post.data.created_on} /></span> -

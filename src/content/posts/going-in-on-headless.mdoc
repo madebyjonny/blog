@@ -2,9 +2,9 @@
 title: Going in on headless
 created_on: 2023-12-28T15:07
 summary: >-
-  I believe Headless is future, but I also think it should be the present. In
-  this article I will be going over the benefits and the drawbacks, but
-  hopefully show that going headless won't be as scary as yoy might think!
+  I believe Headless is future. In this article I will be going over the
+  benefits and the drawbacks, but hopefully show that going headless won't be as
+  scary as yoy might think!
 category: my-thoughts
 ---
 **Prerequisite, this isn’t aimed for sites like my own (which uses markdown files for the posts), but more your mid to large size sites. But to be honest if you're a small business now and aim to grow this may also apply to you.**
@@ -23,4 +23,6 @@ A lot of people will say headless is more complex and I think on paper when you 
 
 NextJS (a popular front end framework you may integrate with) offers a feature called incremental static rerendering. So dynamic pages can be rendered statically. You set a revalidation time, so if content changes from the CMS the pages will be rerendered. This means these static pages can be placed on a CDN, and you can’t really get better performance. Meaning less beefy servers are required to handle the higher traffic. If you host your front end with Vercel you simply just need to hook up your repo and they take care of the rest. Nuxt and Astro are other good options as you choose which pages need to be server driven vs being rendered statically.&nbsp;
 
-The key thing is not every backend change requires a front end change and vice versa. This means developers can work independently without the bottlenecks of each other as components can be built without needing data from the backend and can be integrated when they are ready and the same for the API’s. I feel confident in saying that a company that goes in on headless will be able to adapt to the needs of their users more effectively, without compromising the company's goals. If you have any queries about this feel free to reach out, happy to be a sounding board if this is something you or your company is looking to do.
+The key thing is not every backend change requires a front end change and vice versa. This means developers can work independently without the bottlenecks of each other as components can be built without needing data from the backend and can be integrated when they are ready and the same for the API’s. I feel confident in saying that a company that goes in on headless will be able to adapt to the needs of their users more effectively, without compromising the company's goals.
+
+If you have any queries about this feel free to reach out, happy to be a sounding board if this is something you or your company is looking to do.&nbsp;

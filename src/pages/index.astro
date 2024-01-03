@@ -41,7 +41,7 @@ const seo = {
             <li>
               <BlogCard
                 href={`/posts/${post.slug}`}
-                category={post.data.category}
+                category={post.data.category.replace("-", " ")}
                 title={post.data.title}
                 summary={post.data.summary}
                 date={post.data.created_on}
