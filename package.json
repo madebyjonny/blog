@@ -23,9 +23,11 @@
     "astro": "^4.0.7",
     "astro-stylex": "^0.1.2",
     "dayjs": "^1.11.10",
+    "highlight.js": "^11.9.0",
     "lucide-react": "^0.303.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rehype-pretty-code": "^0.12.3",
     "typescript": "^5.3.3"
   },
   "devDependencies": {

@@ -28,10 +28,24 @@ article {
   grid-template-columns: subgrid;
 }
 
-p {
+p,
+img,
+h1,
+pre,
+h2 {
   line-height: 1.75;
   letter-spacing: 0.5px;
   grid-column: 1 / 7 !important;
+}
+
+article img {
+  width: 100%;
+}
+
+article h1,
+article h2,
+article strong {
+  color: #fff;
 }
 
 a {
@@ -39,14 +53,35 @@ a {
   color: #000;
 }
 
+code {
+  display: inline-block;
+  padding: 0 12px;
+  background-color: #111;
+  border-radius: 0.5rem;
+}
+
+pre {
+  display: grid; /*  this is way the line will span whole width of `code` component */
+  padding: 24px;
+  overflow-x: auto;
+  background-color: #111;
+  border-radius: 0.5rem;
+}
+
 @media (min-width: 600px) {
-  p {
+  p,
+  h2,
+  h1,
+  pre {
     grid-column: 2 / 6 !important;
   }
 }
 
 @media (min-width: 1313px) {
-  p {
+  p,
+  h2,
+  h1,
+  pre {
     grid-column: 4 / 10 !important;
   }
 }

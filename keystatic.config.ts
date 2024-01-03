@@ -40,7 +40,17 @@ export default config({
           formatting: true,
           dividers: true,
           links: true,
-          images: true,
+          images: {
+            directory: "src/content/posts/_images",
+            publicPath: "/src/content/posts/_images/",
+            schema: {
+              title: fields.text({
+                label: "Caption",
+                description:
+                  "The text to display under the image in a caption.",
+              }),
+            },
+          },
         }),
       },
     }),
