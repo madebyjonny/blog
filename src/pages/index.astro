@@ -18,10 +18,11 @@ const posts = (await getCollection("posts")) as {
 const seo = {
   title: "Blog",
   keywords: "tech",
-  description: "My blog",
+  description:
+    "This is mostly a place where I can talk about the technologies I am using and the things I am learning.",
   sitename: "Jonathan Hamilton's blog",
-  url: "https://example.com/blog",
-  imageurl: "https://example.com/og-image.jpg",
+  url: "https://blog.madebyjonny.com",
+  imageurl: "https://blog.madebyjonny.com/api/og.png",
   imageAlt: "banner for the blog",
 };
 ---
@@ -30,7 +31,7 @@ const seo = {
   <Grid>
     <HeroText
       title="👋🏻 Welcome to my blog"
-      leadText="This is mostly a place for me to talk about the technology I am using and also to experiment with them."
+      leadText="This is mostly a place where I can talk about the technologies I am using and the things I am learning."
     />
   </Grid>
   <Grid>
