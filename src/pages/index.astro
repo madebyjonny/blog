@@ -37,17 +37,24 @@ const seo = {
     <ul>
       {
         posts &&
-          posts.reverse().map((post) => (
-            <li>
-              <BlogCard
-                href={`/posts/${post.slug}`}
-                category={post.data.category.replace("-", " ")}
-                title={post.data.title}
-                summary={post.data.summary}
-                date={post.data.created_on}
-              />
-            </li>
-          ))
+          posts
+            .sort((a, b) => {
+              return (
+                new Date(b.data.created_on).valueOf() -
+                new Date(a.data.created_on).valueOf()
+              );
+            })
+            .map((post) => (
+              <li>
+                <BlogCard
+                  href={`/posts/${post.slug}`}
+                  category={post.data.category.replace("-", " ")}
+                  title={post.data.title}
+                  summary={post.data.summary}
+                  date={post.data.created_on}
+                />
+              </li>
+            ))
       }
     </ul>
   </Grid>
