@@ -11,25 +11,25 @@ category: technology
 
 Before we begin, there are a few things you should be comfortable with, the primary thing will be knowing what an API is and previous experience with content management systems will be helpful.
 
-So let’s start, what is a headless content management system? From a user's perspective they don’t function much differently, they are still places to organise your content for your website or application. However, instead of a traditional front end, it exposes the content in the form of an API, this could be REST, GraphQL or sometimes both.&nbsp;
+What is a headless content management system? From a user's perspective they don’t function much differently, they are still places to organise your content for your website or application. However, instead of a traditional front end, it exposes the content in the form of an API, this could be REST, GraphQL or sometimes both.&nbsp;
 
 ## Getting started
 
-For this I will be using Payload CMS, compared to other CMS’s they are relatively new on the scene. They offer a lot of features out of the box; REST & GraphQL API’s, Localization & User access controls alongside your regular content creation tools. I will be mostly looking at the basics for this tutorial, but if you would like me to write about other parts let me know. Payload is open source and is currently built on top of Express (a commonly used web server framework or NodeJS). I believe there are plans to migrate to NextJS in the future.&nbsp;
+Payload CMS, compared to other CMS’s they are relatively new on the scene. They offer a lot of features out of the box; REST & GraphQL API’s, Localization & User access controls alongside your regular content creation tools. I will be mostly looking at the basics for this tutorial, but if you would like me to write about other parts let me know. Payload is open source and is currently built on top of Express (a commonly used web server framework for NodeJS).
 
-Let’s get started, make sure you have NodeJS & PostgreSQL installed on your machine. If you don’t you can install NodeJS here, and if you’re on a mac I found this application useful for managing Postgres locally without having to use something like docker.
+Let’s get started, make sure you have NodeJS & PostgreSQL installed on your machine. If you don’t you can install [NodeJS here](https://nodejs.org/en), and if you’re on a mac I found this [application](https://postgresapp.com/) useful for managing Postgres locally without having to use something like docker.
 
 Open your terminal and run
 
 `npx create-payload-app@latest`
 
-This will run their CLI where you can name your project, choose a template, select the type of database you want & the database url for the database you have chosen. For this tutorial I have chosen a blank template and selected Postgres. For the database string you will need it to be slightly different, especially if you are using the app I suggested earlier, it should look something like this:
+This will run their CLI where you can name your project, choose a template, select the type of database you want & the database url for the database you have chosen. For this tutorial I have chosen a blank template and selected Postgres. If you haven't already create a database and name it what ever you like, I just named mine "payload". For the database string you will need it to be slightly different, especially if you are using the app I suggested earlier, it should look something like this:
 
 `postgres://postgres:postgres@127.0.0.1:5432/payload`
 
 **Some more info about the database URL is you’re not familiar**
 
-where “payload” is the name of the database you want to connect to (this doesn’t have to be named payload). The “postgres:postgres” part is your username as password for your database. “127.0.0.1:5432” is your local machine address “127.0.0.1” is the same as “localhost”, :5432 is the port for Postgres, you will often see this as the default when working locally.
+where “payload” is the name of the database you want to connect to (this doesn’t have to be named payload). The “postgres:postgres” part is your username as password for your database. “127.0.0.1:5432” is your local machine address (“127.0.0.1” is the same as “localhost”), :5432 is the port for where Postgres is running.
 
 Once you have done this, move into the directory and you should be able to run
 
@@ -45,7 +45,9 @@ It’s time to dive into the code. So open your working directory in your editor
 
 ![](/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2014.30.46.png)
 
-Collections in Payload are just objects, if you look at the Users.ts file will get an example of how the structure should look, but because they are using payload we can get inference thanks to the `CollectionConfig` type. So let's create our own, inside of the collections directory create a file called Pages.ts. We need to import the type of CollectionConfig from payload/types and then we can create a Page variable for our object and start to fill out the required fields (you can use ctrl+space in VS Code to see what can be used in the object). Alternatively you can visit Payload’s documentation for a full list of fields you can use. This is what mine looks like.
+Collections in Payload are how we create content types. if you look at the Users.ts file will get an example of how the structure should look, the collections are justs imple javascript objects. The project uses Typescript so we can get inference thanks to the `CollectionConfig` type. So let's create our own, inside of the collections directory create a file called Pages.ts. We need to import the type of CollectionConfig from payload/types and then we can create a Page variable for our object and start to fill out the required fields (you can use ctrl+space in VS Code to see what can be used in the object). Alternatively you can visit Payload’s [documentation](https://payloadcms.com/docs/fields/overview) for a full list of fields you can use. This is what mine looks like.
+
+As you can see below I have 4 fields, one for the title that is type text, a slug that will represent the URL of the page, a summary that is a textarea and content which is a richText type. The difference between textarea and richText is that you get a tool bar to format your text. You will also see the "useAsTitle" key in the admin object, this takes what ever you type into your title field and makes that the title of the page you are creating.
 
 ```
 import { CollectionConfig } from "payload/types";
@@ -82,7 +84,7 @@ const Pages: CollectionConfig = {
 export default Pages;
 ```
 
-You now need to register this collection by going to the payload.config.ts file and where you see the collections array, add Pages to that. It should look something like this:
+You now need to register this collection by going to the payload.config.ts file and where you see the collections array, add Pages next to Users in the array. It should look something like this:
 
 ```
 export default buildConfig({
@@ -116,7 +118,7 @@ Now let’s go into that and create some content, this can be anything for now, 
 
 ![](/_images/getting-started-with-payload-cms/Screenshot%202024-01-03%20at%2013.41.12.png)
 
-By default you will need to be authenticated to visit this end point, so if you tried to call this from your web application it wouldn’t work. So let’s go back and allow that. Back in your Pages collections all you need to do is add this&nbsp;to our Pages collection.
+By default you will need to be authenticated to visit this end point, so if you tried to call this from your web application it wouldn’t work. So let’s go back and allow that. Back in your Pages collection all you need to do is add this&nbsp;to our Pages collection.
 
 ```
  access: {     
