@@ -32,6 +32,7 @@ p,
 img,
 h1,
 pre,
+code,
 h2 {
   line-height: 1.75;
   letter-spacing: 0.5px;
@@ -53,27 +54,34 @@ a {
   color: #000;
 }
 
-code {
-  display: inline-block;
-  padding: 0 12px;
-  background-color: #111;
-  border-radius: 0.5rem;
-}
-
+code,
 pre {
-  display: grid; /*  this is way the line will span whole width of `code` component */
-  padding: 24px;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
   overflow-x: auto;
   background-color: #111;
   border-radius: 0.5rem;
+  color: #ccc;
+}
+
+code {
+  padding: 0 12px;
 }
 
 @media (min-width: 600px) {
   p,
   h2,
   h1,
+  code,
   pre {
     grid-column: 2 / 6 !important;
+  }
+
+  pre {
+    padding: 24px;
   }
 }
 
@@ -81,6 +89,7 @@ pre {
   p,
   h2,
   h1,
+  code,
   pre {
     grid-column: 4 / 10 !important;
   }

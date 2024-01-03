@@ -89,10 +89,6 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
-    livePreview: {
-      url: "http://localhost:3001", // The URL to your front-end, this can also be a function (see below)
-      collections: ["pages"], // The collections to enable Live Preview on (globals are also possible)
-    },
   },
   editor: slateEditor({}),
   collections: [Users, Pages],
