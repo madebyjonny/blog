@@ -9,11 +9,8 @@ import { DateFromNow } from "../../components/Date/Date.tsx";
 import Layout from "../../components/Layout/Layout.astro";
 import { Pill } from "../../components/Pill/Pill";
 import { readTime } from "../../utils";
-import hljs from "highlight.js";
-import javascript from "highlight.js/lib/languages/javascript";
 
 // Then register the languages you need
-hljs.registerLanguage("javascript", javascript);
 
 const { slug } = Astro.params;
 

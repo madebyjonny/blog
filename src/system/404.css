@@ -1,0 +1,47 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: #f1f1f1;
+  gap: 68px;
+}
+
+.zone {
+  width: 70%;
+  max-width: 769px;
+}
+
+#particles-js {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+a {
+  padding: 12px 24px;
+  display: inline-block;
+  background-color: #000;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  color: #d8d8d8;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  box-shadow:
+    0 0 0 5px #d8d8d8,
+    0 0 0 13px #000;
+}
+
+a:hover {
+  background-color: #d8d8d8;
+  color: #000;
+  box-shadow:
+    0 0 0 5px #000,
+    0 0 0 13px #d8d8d8;
+}
