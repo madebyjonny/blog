@@ -45,3 +45,45 @@ a:hover {
     0 0 0 2px #000,
     0 0 0 4px #d8d8d8;
 }
+
+.door,
+.eye,
+.emc2 {
+  position: absolute;
+}
+
+.hover {
+  animation: hoverUpDown 5s infinite alternate;
+}
+
+@keyframes hoverUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.door {
+  right: 10%;
+  top: 10%;
+  max-width: 200px;
+  rotate: 32deg;
+  animation-delay: 0.2s;
+}
+
+.eye {
+  left: 10%;
+  top: 10%;
+  animation-delay: 0.4s;
+}
+
+.emc2 {
+  left: 10%;
+  bottom: 30%;
+  max-width: 150px;
+  rotate: -28deg;
+  animation-delay: 0.6s;
+}
