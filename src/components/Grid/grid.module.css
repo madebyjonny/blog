@@ -36,6 +36,9 @@
     padding: 0 10%;
     grid-template-columns: repeat(12, 1fr);
   }
+  .grid ul {
+    grid-column: span 12;
+  }
   .grid li {
     grid-column: span 4 !important;
   }
