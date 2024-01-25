@@ -39,6 +39,10 @@ h2 {
   grid-column: 1 / 7 !important;
 }
 
+h1 {
+  line-height: 1.25;
+}
+
 article img {
   width: 100%;
 }
